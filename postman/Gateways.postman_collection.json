@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "c2951f47-753b-4bfd-80cb-b2047616b844",
+		"name": "Gateways",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"_postman_id": "d4849296-d2e6-4022-a63a-bb0f926e341a",
+			"name": "Get all gateways",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/api/v1/gateways/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"gateways",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "3d3a6250-9b3a-426b-b38b-8e5899e420a0",
+			"name": "Get a gateway by serial number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/api/v1/gateways/get/SN12345",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"gateways",
+						"get",
+						"SN12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "9b4930f4-81bd-4e32-a279-4df59315a0f6",
+			"name": "Create gateway",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "serialNumber",
+							"value": "SN12345",
+							"sessionValue": "code",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "My gateway",
+							"sessionValue": "Mi gateway",
+							"type": "text"
+						},
+						{
+							"key": "ipv4",
+							"value": "127.0.0.1",
+							"sessionValue": "127.0.0.1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/gateways/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"gateways",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "e237e1af-9fd6-4859-b75b-99e134d38e13",
+			"name": "Create gateway (bad ip)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "serialNumber",
+							"value": "SN98765",
+							"sessionValue": "code",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "My gateway",
+							"sessionValue": "Mi gateway",
+							"type": "text"
+						},
+						{
+							"key": "ipv4",
+							"value": "not-a-real-ip",
+							"sessionValue": "127.0.0.1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/gateways/add",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"gateways",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "1b2512c6-edb3-4a2e-80f2-8b3ed249705e",
+			"name": "Remove a gateway by serial number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/api/v1/gateways/remove/SN12345",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"gateways",
+						"remove",
+						"SN12345"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "7814f809-ebbd-4a42-8e7d-9c3d59f4845b",
+			"name": "Add device to gateway",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "vendor",
+							"value": "Somebody"
+						},
+						{
+							"key": "uid",
+							"value": "21"
+						},
+						{
+							"key": "serialNumber",
+							"value": "SN12345"
+						},
+						{
+							"key": "state",
+							"value": "ONLINE"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/gateways/add-device",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"gateways",
+						"add-device"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "5f602cd8-2bbb-4a55-81a8-664bb0f70ec2",
+			"name": "Remove device",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/api/v1/gateways/remove-device/11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"gateways",
+						"remove-device",
+						"11"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
